@@ -46,7 +46,7 @@ oc volume dc/${PROJ} --add --name=${WORK_FOLDER} --path=/home/${WORK_FOLDER} --m
 
 # change an environment variable (for a deployment config)
 # to switch from default Jupyter Notebook to Jupyter Lab
-oc set env dc/${PROJ} JUPYTER_ENABLE_LAB=1
+oc set env dc/${PROJ} JUPYTER_LAB=1
 
 # expose service, creating route
 oc expose svc/${PROJ}
