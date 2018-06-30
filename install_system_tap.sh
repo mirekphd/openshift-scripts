@@ -11,3 +11,7 @@ kernel-debuginfo-common-$(uname -m)-$(uname -r)
 
 debuginfo-install -y kernel-$(uname -r)
 
+# test the installation
+stap -v -e 'probe vfs.read {printf("read performed\n"); exit()}'
+
+
