@@ -39,7 +39,7 @@ oc get pods | grep $PROJ
 
 
 # launch the app again (pulling it from registry if necessary)
-oc new-app ${IMG}:${TAG}
+oc new-app --name=${PROJ} ${IMG}:${TAG}
 
 # mount a volume from the host system
 oc volume dc/${PROJ} --add --name=${WORK_FOLDER} --path=/home/${WORK_FOLDER} --mount-path=/home/${WORK_FOLDER} --overwrite
