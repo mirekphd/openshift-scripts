@@ -17,8 +17,9 @@ IMG=${REPO}/${PROJ}
 # delete deploymentconfig
 oc delete dc $PROJ
 
-# delete imagestream
-oc delete is $PROJ
+# do not delete imagestream 
+# (to preserve image in local cache)
+# oc delete is $PROJ
 
 # delete service
 oc delete svc $PROJ
